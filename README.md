@@ -1,1 +1,2 @@
 # DE_Project_2026
+MediOS is an enterprise-level RESTful backend built with Node.js, Express.js, and PostgreSQL (via Prisma ORM) to manage core clinical workflows and reporting. The platform handles patient registration, doctor scheduling, and transactional billing, while leveraging advanced SQL engineering—including Common Table Expressions (CTEs), correlated subqueries, database views, and atomic multi-model transactions—to deliver high-performance analytics and enforce strict relational data integrity
