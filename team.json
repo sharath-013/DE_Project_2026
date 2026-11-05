@@ -1,0 +1,29 @@
+{
+  "team_name": "Team T0137",
+  "members": [
+    {
+      "name": "Sharath Chandra Reddy Maryada",
+      "roll_no": "2501010264",
+      "github_username": "sharath-013",
+      "role": "Group Lead"
+    },
+    {
+      "name": "Adem Aravind",
+      "roll_no": "2501010024",
+      "github_username": "AdemAravind",
+      "role": "Member 2"
+    },
+    {
+      "name": "Sugunesh Dande",
+      "roll_no": "2501010462",
+      "github_username": "suguneshd",
+      "role": "Member 3"
+    },
+    {
+      "name": "B B S V S Praveen",
+      "roll_no": "2501010712",
+      "github_username": "praveenbetha-24",
+      "role": "Member 4"
+    }
+  ]
+}
