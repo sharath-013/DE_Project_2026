@@ -22,12 +22,12 @@
 
 | Role | Name | Enrollment No. | GitHub Username |
 |------|------|----------------|-----------------|
-| Group Lead | | | |
-| Member 2 | | | |
-| Member 3 | | | |
-| Member 4 | | | |
+| Group Lead |Sharath Chandra Reddy Maryada |2501010264 |sharath-013 |
+| Member 2 |Adem Aravind |2501010024 |AdemAravind |
+| Member 3 |Sugunesh Dande |2501010462 |suguneshd |
+| Member 4 |B B S V S Praveen |2501010712 |praveenbetha-24 |
 
-**Team No.:** ____ · **Section:** ____ · **Repository URL:** ____
+**Team No.:** T0137 · **Section:** A · **Repository URL:**https://github.com/sharath-013/DE_Project_2026.git
 
 ---
 
