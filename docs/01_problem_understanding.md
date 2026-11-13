@@ -1,0 +1,15 @@
+# Phase 1: Problem Understanding
+
+Team T0137 · Duolingo Language Learning Database[span_0](start_span)[span_0](end_span)
+
+## What the business actually needs (P1 to P7)[span_1](start_span)[span_1](end_span)
+
+| # | The problem in our own words | Stakeholder | Type | Queries |
+|---|------------------------------|-------------|------|---------|
+| P1 | The main home screen (showing the course path, XP, daily goals, and streaks) is lagging. It needs to open instantly for the user.[span_2](start_span)[span_2](end_span) | Learner[span_3](start_span)[span_3](end_span) | Customer-facing / real-time[span_4](start_span)[span_4](end_span) | R01, R02, R03, R04, R06[span_5](start_span)[span_5](end_span) |
+| P2 | The leagues tab is struggling to show the 30-player leaderboard quickly, and calculating the weekly promotions/demotions is taking way too long.[span_6](start_span)[span_6](end_span) | Leagues / gamification team[span_7](start_span)[span_7](end_span) | Real-time (R05), batch (W04), reporting (R14)[span_8](start_span)[span_8](end_span) | R05, R14, W04[span_9](start_span)[span_9](end_span) |
+| P3 | The core loop of starting a lesson, finishing it, and adding the daily XP needs to feel completely instant so the app doesn't freeze up on the user.[span_10](start_span)[span_10](end_span) | Learner[span_11](start_span)[span_11](end_span) | Customer-facing / real-time[span_12](start_span)[span_12](end_span) | W01, W02, W03[span_13](start_span)[span_13](end_span) |
+| P4 | The curriculum team is asking for heavy reports on things like the hardest lessons, quit rates, and lost hearts.[span_14](start_span)[span_14](end_span) | Curriculum team[span_15](start_span)[span_15](end_span) | Reporting / analytics[span_16](start_span)[span_16](end_span) | R07, R08, R19, R24[span_17](start_span)[span_17](end_span) |
+| P5 | The query finding "users who haven't referred anyone" keeps coming up empty. This is actually a logic bug giving the wrong answer, not a speed issue.[span_18](start_span)[span_18](end_span) | Growth (referrals)[span_19](start_span)[span_19](end_span) | Reporting / analytics (the answer is wrong, not slow)[span_20](start_span)[span_20](end_span) | R13[span_21](start_span)[span_21](end_span) |
+| P6 | Internal dashboards for tracking daily active users, XP trends, and retention are just timing out before they can even load.[span_22](start_span)[span_22](end_span) | Growth and retention, notifications team[span_23](start_span)[span_23](end_span) | Reporting / analytics[span_24](start_span)[span_24](end_span) | R09, R15, R18, R20, R21, R25[span_25](start_span)[span_25](end_span) |
+| P7 | Random features like signing in, searching for friends, and support consoles are slow. Plus, we need to prep the DB to handle 20x more traffic soon.[span_26](start_span)[span_26](end_span) | Platform, monetisation (Super/Max), support[span_27](start_span)[span_27](end_span) | Mixed: R11, R12 real-time; R10, R16, R17, R22, R23, W05 interactive or batch[span_28](start_span)[span_28](end_span) | R10, R11, R12, R16, R17, R22, R23, W05[span_29](start_span)[span_29](end_span) |
