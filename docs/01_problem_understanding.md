@@ -13,3 +13,21 @@ Team T0137 · Duolingo Language Learning Database[span_0](start_span)[span_0](en
 | P5 | The query finding "users who haven't referred anyone" keeps coming up empty. This is actually a logic bug giving the wrong answer, not a speed issue.[span_18](start_span)[span_18](end_span) | Growth (referrals)[span_19](start_span)[span_19](end_span) | Reporting / analytics (the answer is wrong, not slow)[span_20](start_span)[span_20](end_span) | R13[span_21](start_span)[span_21](end_span) |
 | P6 | Internal dashboards for tracking daily active users, XP trends, and retention are just timing out before they can even load.[span_22](start_span)[span_22](end_span) | Growth and retention, notifications team[span_23](start_span)[span_23](end_span) | Reporting / analytics[span_24](start_span)[span_24](end_span) | R09, R15, R18, R20, R21, R25[span_25](start_span)[span_25](end_span) |
 | P7 | Random features like signing in, searching for friends, and support consoles are slow. Plus, we need to prep the DB to handle 20x more traffic soon.[span_26](start_span)[span_26](end_span) | Platform, monetisation (Super/Max), support[span_27](start_span)[span_27](end_span) | Mixed: R11, R12 real-time; R10, R16, R17, R22, R23, W05 interactive or batch[span_28](start_span)[span_28](end_span) | R10, R11, R12, R16, R17, R22, R23, W05[span_29](start_span)[span_29](end_span) |
+
+## Why Query Types Matter
+
+Basically, if a query is customer-facing, it only touches one user's data and needs to run in milliseconds so the app feels smooth. If it's a reporting query, it has to scan millions of rows, so it's fine if it takes a few seconds.
+
+We'll use this difference to set our actual performance targets when we get to Phase 5.
+
+## Our Assumptions
+
+1. **Seed Data:** We are assuming the seed data provided is totally clean and correct. If a row doesn't fit our constraints, we'll just flag it as a data problem.
+
+2. **Reference Date:** For the sake of testing these queries, "Today" is treated as 30 June 2026, since that's when the dataset stops.
+
+3. **Timezone:** All the times in the database are in Indian Standard Time (UTC+05:30), so we're strictly using `TIMESTAMPTZ`.
+
+4. **Fixed Scope:** We are only focusing on fixing the 30 specific queries given to us. We aren't adding any new features.
+
+5. **Dummy Learner ID:** Learner `1042` is just a random dummy user ID we are using to test the learner-facing queries.
