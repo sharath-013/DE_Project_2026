@@ -1,0 +1,63 @@
+=== W02 run 1 ===
+Update on lesson_attempts  (cost=162.24..170.26 rows=0 width=0) (actual time=1.089..1.090 rows=0 loops=1)
+  Buffers: shared hit=175 dirtied=1
+  InitPlan 2 (returns $1)
+    ->  Result  (cost=161.81..161.82 rows=1 width=8) (actual time=0.905..0.905 rows=1 loops=1)
+          Buffers: shared hit=131
+          InitPlan 1 (returns $0)
+            ->  Limit  (cost=0.42..161.81 rows=1 width=8) (actual time=0.903..0.904 rows=1 loops=1)
+                  Buffers: shared hit=131
+                  ->  Index Scan Backward using lesson_attempts_pkey on lesson_attempts lesson_attempts_1  (cost=0.42..10168.17 rows=63 width=8) (actual time=0.903..0.903 rows=1 loops=1)
+                        Index Cond: (attempt_id IS NOT NULL)
+                        Filter: ((completed_at IS NULL) AND (started_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                        Rows Removed by Filter: 8301
+                        Buffers: shared hit=131
+  ->  Index Scan using lesson_attempts_pkey on lesson_attempts  (cost=0.42..8.44 rows=1 width=20) (actual time=0.913..0.916 rows=1 loops=1)
+        Index Cond: (attempt_id = $1)
+        Buffers: shared hit=137
+Planning:
+  Buffers: shared hit=89
+Planning Time: 0.297 ms
+Execution Time: 1.171 ms
+=== W02 run 2 ===
+Update on lesson_attempts  (cost=162.24..170.26 rows=0 width=0) (actual time=1.317..1.318 rows=0 loops=1)
+  Buffers: shared hit=173 dirtied=1
+  InitPlan 2 (returns $1)
+    ->  Result  (cost=161.81..161.82 rows=1 width=8) (actual time=1.101..1.101 rows=1 loops=1)
+          Buffers: shared hit=129
+          InitPlan 1 (returns $0)
+            ->  Limit  (cost=0.42..161.81 rows=1 width=8) (actual time=1.099..1.099 rows=1 loops=1)
+                  Buffers: shared hit=129
+                  ->  Index Scan Backward using lesson_attempts_pkey on lesson_attempts lesson_attempts_1  (cost=0.42..10168.17 rows=63 width=8) (actual time=1.099..1.099 rows=1 loops=1)
+                        Index Cond: (attempt_id IS NOT NULL)
+                        Filter: ((completed_at IS NULL) AND (started_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                        Rows Removed by Filter: 8301
+                        Buffers: shared hit=129
+  ->  Index Scan using lesson_attempts_pkey on lesson_attempts  (cost=0.42..8.44 rows=1 width=20) (actual time=1.110..1.113 rows=1 loops=1)
+        Index Cond: (attempt_id = $1)
+        Buffers: shared hit=135
+Planning:
+  Buffers: shared hit=89
+Planning Time: 0.367 ms
+Execution Time: 1.411 ms
+=== W02 run 3 ===
+Update on lesson_attempts  (cost=162.24..170.26 rows=0 width=0) (actual time=1.541..1.542 rows=0 loops=1)
+  Buffers: shared hit=173 dirtied=1
+  InitPlan 2 (returns $1)
+    ->  Result  (cost=161.81..161.82 rows=1 width=8) (actual time=1.231..1.232 rows=1 loops=1)
+          Buffers: shared hit=129
+          InitPlan 1 (returns $0)
+            ->  Limit  (cost=0.42..161.81 rows=1 width=8) (actual time=1.227..1.228 rows=1 loops=1)
+                  Buffers: shared hit=129
+                  ->  Index Scan Backward using lesson_attempts_pkey on lesson_attempts lesson_attempts_1  (cost=0.42..10168.17 rows=63 width=8) (actual time=1.225..1.226 rows=1 loops=1)
+                        Index Cond: (attempt_id IS NOT NULL)
+                        Filter: ((completed_at IS NULL) AND (started_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                        Rows Removed by Filter: 8301
+                        Buffers: shared hit=129
+  ->  Index Scan using lesson_attempts_pkey on lesson_attempts  (cost=0.42..8.44 rows=1 width=20) (actual time=1.244..1.249 rows=1 loops=1)
+        Index Cond: (attempt_id = $1)
+        Buffers: shared hit=135
+Planning:
+  Buffers: shared hit=89
+Planning Time: 0.650 ms
+Execution Time: 1.692 ms

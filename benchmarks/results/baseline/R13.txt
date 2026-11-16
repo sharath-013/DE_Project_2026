@@ -1,0 +1,36 @@
+=== R13 run 1 ===
+Seq Scan on learners l  (cost=743.00..1486.00 rows=15000 width=21) (actual time=20.130..20.131 rows=0 loops=1)
+  Filter: (NOT (hashed SubPlan 1))
+  Rows Removed by Filter: 30000
+  Buffers: shared hit=736
+  SubPlan 1
+    ->  Seq Scan on learners r  (cost=0.00..668.00 rows=30000 width=4) (actual time=0.005..5.527 rows=30000 loops=1)
+          Buffers: shared hit=368
+Planning:
+  Buffers: shared hit=86
+Planning Time: 0.743 ms
+Execution Time: 20.295 ms
+=== R13 run 2 ===
+Seq Scan on learners l  (cost=743.00..1486.00 rows=15000 width=21) (actual time=14.264..14.265 rows=0 loops=1)
+  Filter: (NOT (hashed SubPlan 1))
+  Rows Removed by Filter: 30000
+  Buffers: shared hit=736
+  SubPlan 1
+    ->  Seq Scan on learners r  (cost=0.00..668.00 rows=30000 width=4) (actual time=0.003..4.286 rows=30000 loops=1)
+          Buffers: shared hit=368
+Planning:
+  Buffers: shared hit=86
+Planning Time: 0.539 ms
+Execution Time: 14.396 ms
+=== R13 run 3 ===
+Seq Scan on learners l  (cost=743.00..1486.00 rows=15000 width=21) (actual time=12.888..12.888 rows=0 loops=1)
+  Filter: (NOT (hashed SubPlan 1))
+  Rows Removed by Filter: 30000
+  Buffers: shared hit=736
+  SubPlan 1
+    ->  Seq Scan on learners r  (cost=0.00..668.00 rows=30000 width=4) (actual time=0.003..4.297 rows=30000 loops=1)
+          Buffers: shared hit=368
+Planning:
+  Buffers: shared hit=86
+Planning Time: 0.505 ms
+Execution Time: 13.010 ms

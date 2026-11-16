@@ -1,0 +1,84 @@
+=== W05 run 1 ===
+Insert on learner_achievements  (cost=803.62..1265.50 rows=0 width=0) (actual time=40.543..40.544 rows=0 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: learner_achievements_pkey
+  Tuples Inserted: 4016
+  Conflicting Tuples: 7893
+  Buffers: shared hit=53153 dirtied=21 written=21
+  ->  Subquery Scan on "*SELECT*"  (cost=803.62..1265.50 rows=9724 width=14) (actual time=10.089..14.300 rows=11909 loops=1)
+        Buffers: shared hit=241
+        ->  HashAggregate  (cost=803.62..1168.26 rows=9724 width=38) (actual time=10.088..13.420 rows=11909 loops=1)
+              Group Key: e.learner_id
+              Filter: (sum(e.total_xp) >= 100)
+              Batches: 1  Memory Usage: 3601kB
+              Rows Removed by Filter: 18091
+              Buffers: shared hit=241
+              InitPlan 1 (returns $0)
+                ->  Seq Scan on achievements  (cost=0.00..1.12 rows=1 width=2) (actual time=0.016..0.017 rows=1 loops=1)
+                      Filter: ((code)::text = 'XP_100'::text)
+                      Rows Removed by Filter: 9
+                      Buffers: shared hit=1
+              ->  Seq Scan on enrollments e  (cost=0.00..615.00 rows=37500 width=8) (actual time=0.012..2.269 rows=37500 loops=1)
+                    Buffers: shared hit=240
+Planning:
+  Buffers: shared hit=157
+Planning Time: 0.764 ms
+Trigger for constraint learner_achievements_learner_id_fkey: time=16.652 calls=4016
+Trigger for constraint learner_achievements_achievement_id_fkey: time=12.292 calls=4016
+Execution Time: 69.997 ms
+=== W05 run 2 ===
+Insert on learner_achievements  (cost=803.62..1265.50 rows=0 width=0) (actual time=38.394..38.395 rows=0 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: learner_achievements_pkey
+  Tuples Inserted: 4016
+  Conflicting Tuples: 7893
+  Buffers: shared hit=53108 dirtied=22 written=22
+  ->  Subquery Scan on "*SELECT*"  (cost=803.62..1265.50 rows=9724 width=14) (actual time=7.643..11.930 rows=11909 loops=1)
+        Buffers: shared hit=241
+        ->  HashAggregate  (cost=803.62..1168.26 rows=9724 width=38) (actual time=7.642..11.058 rows=11909 loops=1)
+              Group Key: e.learner_id
+              Filter: (sum(e.total_xp) >= 100)
+              Batches: 1  Memory Usage: 3601kB
+              Rows Removed by Filter: 18091
+              Buffers: shared hit=241
+              InitPlan 1 (returns $0)
+                ->  Seq Scan on achievements  (cost=0.00..1.12 rows=1 width=2) (actual time=0.006..0.007 rows=1 loops=1)
+                      Filter: ((code)::text = 'XP_100'::text)
+                      Rows Removed by Filter: 9
+                      Buffers: shared hit=1
+              ->  Seq Scan on enrollments e  (cost=0.00..615.00 rows=37500 width=8) (actual time=0.005..1.869 rows=37500 loops=1)
+                    Buffers: shared hit=240
+Planning:
+  Buffers: shared hit=157
+Planning Time: 0.421 ms
+Trigger for constraint learner_achievements_learner_id_fkey: time=17.041 calls=4016
+Trigger for constraint learner_achievements_achievement_id_fkey: time=12.389 calls=4016
+Execution Time: 68.265 ms
+=== W05 run 3 ===
+Insert on learner_achievements  (cost=803.62..1265.50 rows=0 width=0) (actual time=39.218..39.219 rows=0 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: learner_achievements_pkey
+  Tuples Inserted: 4016
+  Conflicting Tuples: 7893
+  Buffers: shared hit=53146 dirtied=22 written=22
+  ->  Subquery Scan on "*SELECT*"  (cost=803.62..1265.50 rows=9724 width=14) (actual time=7.711..12.267 rows=11909 loops=1)
+        Buffers: shared hit=241
+        ->  HashAggregate  (cost=803.62..1168.26 rows=9724 width=38) (actual time=7.711..11.404 rows=11909 loops=1)
+              Group Key: e.learner_id
+              Filter: (sum(e.total_xp) >= 100)
+              Batches: 1  Memory Usage: 3601kB
+              Rows Removed by Filter: 18091
+              Buffers: shared hit=241
+              InitPlan 1 (returns $0)
+                ->  Seq Scan on achievements  (cost=0.00..1.12 rows=1 width=2) (actual time=0.006..0.007 rows=1 loops=1)
+                      Filter: ((code)::text = 'XP_100'::text)
+                      Rows Removed by Filter: 9
+                      Buffers: shared hit=1
+              ->  Seq Scan on enrollments e  (cost=0.00..615.00 rows=37500 width=8) (actual time=0.004..1.940 rows=37500 loops=1)
+                    Buffers: shared hit=240
+Planning:
+  Buffers: shared hit=157
+Planning Time: 0.414 ms
+Trigger for constraint learner_achievements_learner_id_fkey: time=17.234 calls=4016
+Trigger for constraint learner_achievements_achievement_id_fkey: time=12.521 calls=4016
+Execution Time: 69.447 ms
