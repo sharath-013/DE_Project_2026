@@ -1,0 +1,90 @@
+=== R20 run 1 ===
+WindowAgg  (cost=1855.11..2379.00 rows=14964 width=44) (actual time=4.323..5.599 rows=30 loops=1)
+  Buffers: shared hit=128
+  ->  GroupAggregate  (cost=1855.11..2154.54 rows=14964 width=12) (actual time=4.269..5.571 rows=30 loops=1)
+        Group Key: ((lesson_attempts.started_at)::date)
+        Buffers: shared hit=128
+        ->  Sort  (cost=1855.11..1892.57 rows=14984 width=6) (actual time=4.219..4.744 rows=15232 loops=1)
+              Sort Key: ((lesson_attempts.started_at)::date)
+              Sort Method: quicksort  Memory: 861kB
+              Buffers: shared hit=128
+              ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..815.88 rows=14984 width=6) (actual time=0.014..3.120 rows=15232 loops=1)
+                    Index Cond: ((started_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 30
+                    Buffers: shared hit=125
+Planning:
+  Buffers: shared hit=232
+Planning Time: 0.620 ms
+Execution Time: 5.658 ms
+=== R20 run 2 ===
+WindowAgg  (cost=1855.11..2379.00 rows=14964 width=44) (actual time=4.102..5.406 rows=30 loops=1)
+  Buffers: shared hit=128
+  ->  GroupAggregate  (cost=1855.11..2154.54 rows=14964 width=12) (actual time=4.051..5.380 rows=30 loops=1)
+        Group Key: ((lesson_attempts.started_at)::date)
+        Buffers: shared hit=128
+        ->  Sort  (cost=1855.11..1892.57 rows=14984 width=6) (actual time=4.004..4.549 rows=15232 loops=1)
+              Sort Key: ((lesson_attempts.started_at)::date)
+              Sort Method: quicksort  Memory: 861kB
+              Buffers: shared hit=128
+              ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..815.88 rows=14984 width=6) (actual time=0.011..2.974 rows=15232 loops=1)
+                    Index Cond: ((started_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 30
+                    Buffers: shared hit=125
+Planning:
+  Buffers: shared hit=232
+Planning Time: 0.556 ms
+Execution Time: 5.461 ms
+=== R20 run 3 ===
+WindowAgg  (cost=1855.11..2379.00 rows=14964 width=44) (actual time=4.175..5.463 rows=30 loops=1)
+  Buffers: shared hit=128
+  ->  GroupAggregate  (cost=1855.11..2154.54 rows=14964 width=12) (actual time=4.125..5.440 rows=30 loops=1)
+        Group Key: ((lesson_attempts.started_at)::date)
+        Buffers: shared hit=128
+        ->  Sort  (cost=1855.11..1892.57 rows=14984 width=6) (actual time=4.078..4.598 rows=15232 loops=1)
+              Sort Key: ((lesson_attempts.started_at)::date)
+              Sort Method: quicksort  Memory: 861kB
+              Buffers: shared hit=128
+              ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..815.88 rows=14984 width=6) (actual time=0.010..3.026 rows=15232 loops=1)
+                    Index Cond: ((started_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 30
+                    Buffers: shared hit=125
+Planning:
+  Buffers: shared hit=232
+Planning Time: 0.539 ms
+Execution Time: 5.518 ms
+=== R20 run 4 ===
+WindowAgg  (cost=1855.11..2379.00 rows=14964 width=44) (actual time=4.290..5.602 rows=30 loops=1)
+  Buffers: shared hit=128
+  ->  GroupAggregate  (cost=1855.11..2154.54 rows=14964 width=12) (actual time=4.236..5.577 rows=30 loops=1)
+        Group Key: ((lesson_attempts.started_at)::date)
+        Buffers: shared hit=128
+        ->  Sort  (cost=1855.11..1892.57 rows=14984 width=6) (actual time=4.186..4.713 rows=15232 loops=1)
+              Sort Key: ((lesson_attempts.started_at)::date)
+              Sort Method: quicksort  Memory: 861kB
+              Buffers: shared hit=128
+              ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..815.88 rows=14984 width=6) (actual time=0.010..3.136 rows=15232 loops=1)
+                    Index Cond: ((started_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 30
+                    Buffers: shared hit=125
+Planning:
+  Buffers: shared hit=232
+Planning Time: 0.572 ms
+Execution Time: 5.654 ms
+=== R20 run 5 ===
+WindowAgg  (cost=1855.11..2379.00 rows=14964 width=44) (actual time=4.216..5.504 rows=30 loops=1)
+  Buffers: shared hit=128
+  ->  GroupAggregate  (cost=1855.11..2154.54 rows=14964 width=12) (actual time=4.162..5.478 rows=30 loops=1)
+        Group Key: ((lesson_attempts.started_at)::date)
+        Buffers: shared hit=128
+        ->  Sort  (cost=1855.11..1892.57 rows=14984 width=6) (actual time=4.114..4.637 rows=15232 loops=1)
+              Sort Key: ((lesson_attempts.started_at)::date)
+              Sort Method: quicksort  Memory: 861kB
+              Buffers: shared hit=128
+              ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..815.88 rows=14984 width=6) (actual time=0.014..3.007 rows=15232 loops=1)
+                    Index Cond: ((started_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 30
+                    Buffers: shared hit=125
+Planning:
+  Buffers: shared hit=232
+Planning Time: 0.656 ms
+Execution Time: 5.570 ms

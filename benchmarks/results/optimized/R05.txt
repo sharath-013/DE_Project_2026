@@ -1,0 +1,120 @@
+=== R05 run 1 ===
+Sort  (cost=20.95..20.95 rows=1 width=33) (actual time=0.093..0.095 rows=30 loops=1)
+  Sort Key: (rank() OVER (?))
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=99
+  InitPlan 1 (returns $0)
+    ->  Index Scan using league_memberships_pkey on league_memberships  (cost=0.29..8.31 rows=1 width=4) (actual time=0.007..0.008 rows=1 loops=1)
+          Index Cond: ((learner_id = 1042) AND (week_start = '2026-06-29'::date))
+          Buffers: shared hit=3
+  ->  WindowAgg  (cost=0.57..12.63 rows=1 width=33) (actual time=0.033..0.077 rows=30 loops=1)
+        Buffers: shared hit=96
+        ->  Nested Loop  (cost=0.57..12.61 rows=1 width=25) (actual time=0.029..0.058 rows=30 loops=1)
+              Buffers: shared hit=96
+              ->  Index Only Scan using idx_league_week_cohort_xp on league_memberships lm  (cost=0.29..4.31 rows=1 width=8) (actual time=0.020..0.023 rows=30 loops=1)
+                    Index Cond: ((week_start = '2026-06-29'::date) AND (cohort_id = $0))
+                    Heap Fetches: 0
+                    Buffers: shared hit=6
+              ->  Index Scan using learners_pkey on learners le  (cost=0.29..8.30 rows=1 width=21) (actual time=0.001..0.001 rows=1 loops=30)
+                    Index Cond: (learner_id = lm.learner_id)
+                    Buffers: shared hit=90
+Planning:
+  Buffers: shared hit=356
+Planning Time: 1.044 ms
+Execution Time: 0.149 ms
+=== R05 run 2 ===
+Sort  (cost=20.95..20.95 rows=1 width=33) (actual time=0.096..0.097 rows=30 loops=1)
+  Sort Key: (rank() OVER (?))
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=99
+  InitPlan 1 (returns $0)
+    ->  Index Scan using league_memberships_pkey on league_memberships  (cost=0.29..8.31 rows=1 width=4) (actual time=0.008..0.008 rows=1 loops=1)
+          Index Cond: ((learner_id = 1042) AND (week_start = '2026-06-29'::date))
+          Buffers: shared hit=3
+  ->  WindowAgg  (cost=0.57..12.63 rows=1 width=33) (actual time=0.034..0.079 rows=30 loops=1)
+        Buffers: shared hit=96
+        ->  Nested Loop  (cost=0.57..12.61 rows=1 width=25) (actual time=0.030..0.059 rows=30 loops=1)
+              Buffers: shared hit=96
+              ->  Index Only Scan using idx_league_week_cohort_xp on league_memberships lm  (cost=0.29..4.31 rows=1 width=8) (actual time=0.021..0.024 rows=30 loops=1)
+                    Index Cond: ((week_start = '2026-06-29'::date) AND (cohort_id = $0))
+                    Heap Fetches: 0
+                    Buffers: shared hit=6
+              ->  Index Scan using learners_pkey on learners le  (cost=0.29..8.30 rows=1 width=21) (actual time=0.001..0.001 rows=1 loops=30)
+                    Index Cond: (learner_id = lm.learner_id)
+                    Buffers: shared hit=90
+Planning:
+  Buffers: shared hit=356
+Planning Time: 1.106 ms
+Execution Time: 0.151 ms
+=== R05 run 3 ===
+Sort  (cost=20.95..20.95 rows=1 width=33) (actual time=0.090..0.091 rows=30 loops=1)
+  Sort Key: (rank() OVER (?))
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=99
+  InitPlan 1 (returns $0)
+    ->  Index Scan using league_memberships_pkey on league_memberships  (cost=0.29..8.31 rows=1 width=4) (actual time=0.007..0.007 rows=1 loops=1)
+          Index Cond: ((learner_id = 1042) AND (week_start = '2026-06-29'::date))
+          Buffers: shared hit=3
+  ->  WindowAgg  (cost=0.57..12.63 rows=1 width=33) (actual time=0.031..0.076 rows=30 loops=1)
+        Buffers: shared hit=96
+        ->  Nested Loop  (cost=0.57..12.61 rows=1 width=25) (actual time=0.028..0.057 rows=30 loops=1)
+              Buffers: shared hit=96
+              ->  Index Only Scan using idx_league_week_cohort_xp on league_memberships lm  (cost=0.29..4.31 rows=1 width=8) (actual time=0.019..0.021 rows=30 loops=1)
+                    Index Cond: ((week_start = '2026-06-29'::date) AND (cohort_id = $0))
+                    Heap Fetches: 0
+                    Buffers: shared hit=6
+              ->  Index Scan using learners_pkey on learners le  (cost=0.29..8.30 rows=1 width=21) (actual time=0.001..0.001 rows=1 loops=30)
+                    Index Cond: (learner_id = lm.learner_id)
+                    Buffers: shared hit=90
+Planning:
+  Buffers: shared hit=356
+Planning Time: 0.994 ms
+Execution Time: 0.152 ms
+=== R05 run 4 ===
+Sort  (cost=20.95..20.95 rows=1 width=33) (actual time=0.088..0.090 rows=30 loops=1)
+  Sort Key: (rank() OVER (?))
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=99
+  InitPlan 1 (returns $0)
+    ->  Index Scan using league_memberships_pkey on league_memberships  (cost=0.29..8.31 rows=1 width=4) (actual time=0.007..0.007 rows=1 loops=1)
+          Index Cond: ((learner_id = 1042) AND (week_start = '2026-06-29'::date))
+          Buffers: shared hit=3
+  ->  WindowAgg  (cost=0.57..12.63 rows=1 width=33) (actual time=0.031..0.075 rows=30 loops=1)
+        Buffers: shared hit=96
+        ->  Nested Loop  (cost=0.57..12.61 rows=1 width=25) (actual time=0.027..0.056 rows=30 loops=1)
+              Buffers: shared hit=96
+              ->  Index Only Scan using idx_league_week_cohort_xp on league_memberships lm  (cost=0.29..4.31 rows=1 width=8) (actual time=0.019..0.021 rows=30 loops=1)
+                    Index Cond: ((week_start = '2026-06-29'::date) AND (cohort_id = $0))
+                    Heap Fetches: 0
+                    Buffers: shared hit=6
+              ->  Index Scan using learners_pkey on learners le  (cost=0.29..8.30 rows=1 width=21) (actual time=0.001..0.001 rows=1 loops=30)
+                    Index Cond: (learner_id = lm.learner_id)
+                    Buffers: shared hit=90
+Planning:
+  Buffers: shared hit=356
+Planning Time: 0.929 ms
+Execution Time: 0.135 ms
+=== R05 run 5 ===
+Sort  (cost=20.95..20.95 rows=1 width=33) (actual time=0.087..0.089 rows=30 loops=1)
+  Sort Key: (rank() OVER (?))
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=99
+  InitPlan 1 (returns $0)
+    ->  Index Scan using league_memberships_pkey on league_memberships  (cost=0.29..8.31 rows=1 width=4) (actual time=0.007..0.007 rows=1 loops=1)
+          Index Cond: ((learner_id = 1042) AND (week_start = '2026-06-29'::date))
+          Buffers: shared hit=3
+  ->  WindowAgg  (cost=0.57..12.63 rows=1 width=33) (actual time=0.031..0.074 rows=30 loops=1)
+        Buffers: shared hit=96
+        ->  Nested Loop  (cost=0.57..12.61 rows=1 width=25) (actual time=0.027..0.055 rows=30 loops=1)
+              Buffers: shared hit=96
+              ->  Index Only Scan using idx_league_week_cohort_xp on league_memberships lm  (cost=0.29..4.31 rows=1 width=8) (actual time=0.019..0.021 rows=30 loops=1)
+                    Index Cond: ((week_start = '2026-06-29'::date) AND (cohort_id = $0))
+                    Heap Fetches: 0
+                    Buffers: shared hit=6
+              ->  Index Scan using learners_pkey on learners le  (cost=0.29..8.30 rows=1 width=21) (actual time=0.001..0.001 rows=1 loops=30)
+                    Index Cond: (learner_id = lm.learner_id)
+                    Buffers: shared hit=90
+Planning:
+  Buffers: shared hit=356
+Planning Time: 0.921 ms
+Execution Time: 0.134 ms

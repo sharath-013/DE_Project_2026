@@ -1,0 +1,95 @@
+=== R17 run 1 ===
+Sort  (cost=3911.38..3911.38 rows=3 width=46) (actual time=22.806..22.807 rows=3 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE is_perfect))::numeric) / (count(*))::numeric), 2)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=545
+  ->  HashAggregate  (cost=3911.28..3911.35 rows=3 width=46) (actual time=22.770..22.772 rows=3 loops=1)
+        Group Key: device
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=542
+        ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..3466.16 rows=59350 width=7) (actual time=0.014..12.263 rows=60858 loops=1)
+              Index Cond: ((started_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              Filter: (completed_at IS NOT NULL)
+              Rows Removed by Filter: 7112
+              Heap Fetches: 92
+              Buffers: shared hit=542
+Planning:
+  Buffers: shared hit=250
+Planning Time: 1.407 ms
+Execution Time: 22.910 ms
+=== R17 run 2 ===
+Sort  (cost=3911.38..3911.38 rows=3 width=46) (actual time=20.139..20.139 rows=3 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE is_perfect))::numeric) / (count(*))::numeric), 2)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=540
+  ->  HashAggregate  (cost=3911.28..3911.35 rows=3 width=46) (actual time=20.111..20.112 rows=3 loops=1)
+        Group Key: device
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=537
+        ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..3466.16 rows=59350 width=7) (actual time=0.011..12.031 rows=60858 loops=1)
+              Index Cond: ((started_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              Filter: (completed_at IS NOT NULL)
+              Rows Removed by Filter: 7112
+              Heap Fetches: 87
+              Buffers: shared hit=537
+Planning:
+  Buffers: shared hit=250
+Planning Time: 1.088 ms
+Execution Time: 20.212 ms
+=== R17 run 3 ===
+Sort  (cost=3911.38..3911.38 rows=3 width=46) (actual time=16.204..16.204 rows=3 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE is_perfect))::numeric) / (count(*))::numeric), 2)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=540
+  ->  HashAggregate  (cost=3911.28..3911.35 rows=3 width=46) (actual time=16.183..16.184 rows=3 loops=1)
+        Group Key: device
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=537
+        ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..3466.16 rows=59350 width=7) (actual time=0.008..9.283 rows=60858 loops=1)
+              Index Cond: ((started_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              Filter: (completed_at IS NOT NULL)
+              Rows Removed by Filter: 7112
+              Heap Fetches: 87
+              Buffers: shared hit=537
+Planning:
+  Buffers: shared hit=250
+Planning Time: 0.633 ms
+Execution Time: 16.258 ms
+=== R17 run 4 ===
+Sort  (cost=3911.38..3911.38 rows=3 width=46) (actual time=17.012..17.013 rows=3 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE is_perfect))::numeric) / (count(*))::numeric), 2)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=540
+  ->  HashAggregate  (cost=3911.28..3911.35 rows=3 width=46) (actual time=16.989..16.991 rows=3 loops=1)
+        Group Key: device
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=537
+        ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..3466.16 rows=59350 width=7) (actual time=0.008..10.113 rows=60858 loops=1)
+              Index Cond: ((started_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              Filter: (completed_at IS NOT NULL)
+              Rows Removed by Filter: 7112
+              Heap Fetches: 87
+              Buffers: shared hit=537
+Planning:
+  Buffers: shared hit=250
+Planning Time: 0.822 ms
+Execution Time: 17.072 ms
+=== R17 run 5 ===
+Sort  (cost=3911.38..3911.38 rows=3 width=46) (actual time=17.172..17.173 rows=3 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE is_perfect))::numeric) / (count(*))::numeric), 2)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=540
+  ->  HashAggregate  (cost=3911.28..3911.35 rows=3 width=46) (actual time=17.153..17.155 rows=3 loops=1)
+        Group Key: device
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=537
+        ->  Index Only Scan using idx_attempts_started_at on lesson_attempts  (cost=0.42..3466.16 rows=59350 width=7) (actual time=0.007..10.143 rows=60858 loops=1)
+              Index Cond: ((started_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (started_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              Filter: (completed_at IS NOT NULL)
+              Rows Removed by Filter: 7112
+              Heap Fetches: 87
+              Buffers: shared hit=537
+Planning:
+  Buffers: shared hit=250
+Planning Time: 0.589 ms
+Execution Time: 17.219 ms

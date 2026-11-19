@@ -1,0 +1,150 @@
+=== R06 run 1 ===
+Limit  (cost=9.83..10.52 rows=1 width=14) (actual time=0.075..0.076 rows=1 loops=1)
+  Buffers: shared hit=21
+  ->  Incremental Sort  (cost=9.83..119.93 rows=159 width=14) (actual time=0.075..0.075 rows=1 loops=1)
+        Sort Key: u.unit_no, l.lesson_no
+        Presorted Key: u.unit_no
+        Full-sort Groups: 1  Sort Method: top-N heapsort  Average Memory: 25kB  Peak Memory: 25kB
+        Buffers: shared hit=21
+        ->  Nested Loop Anti Join  (cost=0.84..116.89 rows=159 width=14) (actual time=0.036..0.060 rows=7 loops=1)
+              Join Filter: (a.lesson_id = l.lesson_id)
+              Rows Removed by Join Filter: 274
+              Buffers: shared hit=15
+              ->  Nested Loop  (cost=0.42..93.95 rows=160 width=14) (actual time=0.013..0.017 rows=9 loops=1)
+                    Buffers: shared hit=11
+                    ->  Index Scan using uq_unit_in_course on units u  (cost=0.14..10.24 rows=20 width=6) (actual time=0.009..0.009 rows=2 loops=1)
+                          Index Cond: (course_id = 1)
+                          Buffers: shared hit=5
+                    ->  Index Scan using uq_lesson_in_unit on lessons l  (cost=0.28..4.11 rows=8 width=16) (actual time=0.002..0.003 rows=4 loops=2)
+                          Index Cond: (unit_id = u.unit_id)
+                          Buffers: shared hit=6
+              ->  Materialize  (cost=0.42..8.55 rows=6 width=4) (actual time=0.001..0.003 rows=31 loops=9)
+                    Buffers: shared hit=4
+                    ->  Index Only Scan using idx_attempts_completed_learner_lesson on lesson_attempts a  (cost=0.42..8.53 rows=6 width=4) (actual time=0.010..0.013 rows=39 loops=1)
+                          Index Cond: (learner_id = 1042)
+                          Heap Fetches: 0
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 1.105 ms
+Execution Time: 0.106 ms
+=== R06 run 2 ===
+Limit  (cost=9.83..10.52 rows=1 width=14) (actual time=0.077..0.078 rows=1 loops=1)
+  Buffers: shared hit=21
+  ->  Incremental Sort  (cost=9.83..119.93 rows=159 width=14) (actual time=0.076..0.077 rows=1 loops=1)
+        Sort Key: u.unit_no, l.lesson_no
+        Presorted Key: u.unit_no
+        Full-sort Groups: 1  Sort Method: top-N heapsort  Average Memory: 25kB  Peak Memory: 25kB
+        Buffers: shared hit=21
+        ->  Nested Loop Anti Join  (cost=0.84..116.89 rows=159 width=14) (actual time=0.037..0.061 rows=7 loops=1)
+              Join Filter: (a.lesson_id = l.lesson_id)
+              Rows Removed by Join Filter: 274
+              Buffers: shared hit=15
+              ->  Nested Loop  (cost=0.42..93.95 rows=160 width=14) (actual time=0.014..0.017 rows=9 loops=1)
+                    Buffers: shared hit=11
+                    ->  Index Scan using uq_unit_in_course on units u  (cost=0.14..10.24 rows=20 width=6) (actual time=0.009..0.009 rows=2 loops=1)
+                          Index Cond: (course_id = 1)
+                          Buffers: shared hit=5
+                    ->  Index Scan using uq_lesson_in_unit on lessons l  (cost=0.28..4.11 rows=8 width=16) (actual time=0.002..0.003 rows=4 loops=2)
+                          Index Cond: (unit_id = u.unit_id)
+                          Buffers: shared hit=6
+              ->  Materialize  (cost=0.42..8.55 rows=6 width=4) (actual time=0.002..0.003 rows=31 loops=9)
+                    Buffers: shared hit=4
+                    ->  Index Only Scan using idx_attempts_completed_learner_lesson on lesson_attempts a  (cost=0.42..8.53 rows=6 width=4) (actual time=0.010..0.013 rows=39 loops=1)
+                          Index Cond: (learner_id = 1042)
+                          Heap Fetches: 0
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 1.118 ms
+Execution Time: 0.109 ms
+=== R06 run 3 ===
+Limit  (cost=9.83..10.52 rows=1 width=14) (actual time=0.075..0.076 rows=1 loops=1)
+  Buffers: shared hit=21
+  ->  Incremental Sort  (cost=9.83..119.93 rows=159 width=14) (actual time=0.075..0.075 rows=1 loops=1)
+        Sort Key: u.unit_no, l.lesson_no
+        Presorted Key: u.unit_no
+        Full-sort Groups: 1  Sort Method: top-N heapsort  Average Memory: 25kB  Peak Memory: 25kB
+        Buffers: shared hit=21
+        ->  Nested Loop Anti Join  (cost=0.84..116.89 rows=159 width=14) (actual time=0.036..0.059 rows=7 loops=1)
+              Join Filter: (a.lesson_id = l.lesson_id)
+              Rows Removed by Join Filter: 274
+              Buffers: shared hit=15
+              ->  Nested Loop  (cost=0.42..93.95 rows=160 width=14) (actual time=0.014..0.017 rows=9 loops=1)
+                    Buffers: shared hit=11
+                    ->  Index Scan using uq_unit_in_course on units u  (cost=0.14..10.24 rows=20 width=6) (actual time=0.009..0.009 rows=2 loops=1)
+                          Index Cond: (course_id = 1)
+                          Buffers: shared hit=5
+                    ->  Index Scan using uq_lesson_in_unit on lessons l  (cost=0.28..4.11 rows=8 width=16) (actual time=0.002..0.003 rows=4 loops=2)
+                          Index Cond: (unit_id = u.unit_id)
+                          Buffers: shared hit=6
+              ->  Materialize  (cost=0.42..8.55 rows=6 width=4) (actual time=0.001..0.003 rows=31 loops=9)
+                    Buffers: shared hit=4
+                    ->  Index Only Scan using idx_attempts_completed_learner_lesson on lesson_attempts a  (cost=0.42..8.53 rows=6 width=4) (actual time=0.009..0.012 rows=39 loops=1)
+                          Index Cond: (learner_id = 1042)
+                          Heap Fetches: 0
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 1.134 ms
+Execution Time: 0.107 ms
+=== R06 run 4 ===
+Limit  (cost=9.83..10.52 rows=1 width=14) (actual time=0.076..0.077 rows=1 loops=1)
+  Buffers: shared hit=21
+  ->  Incremental Sort  (cost=9.83..119.93 rows=159 width=14) (actual time=0.076..0.076 rows=1 loops=1)
+        Sort Key: u.unit_no, l.lesson_no
+        Presorted Key: u.unit_no
+        Full-sort Groups: 1  Sort Method: top-N heapsort  Average Memory: 25kB  Peak Memory: 25kB
+        Buffers: shared hit=21
+        ->  Nested Loop Anti Join  (cost=0.84..116.89 rows=159 width=14) (actual time=0.037..0.060 rows=7 loops=1)
+              Join Filter: (a.lesson_id = l.lesson_id)
+              Rows Removed by Join Filter: 274
+              Buffers: shared hit=15
+              ->  Nested Loop  (cost=0.42..93.95 rows=160 width=14) (actual time=0.014..0.017 rows=9 loops=1)
+                    Buffers: shared hit=11
+                    ->  Index Scan using uq_unit_in_course on units u  (cost=0.14..10.24 rows=20 width=6) (actual time=0.009..0.009 rows=2 loops=1)
+                          Index Cond: (course_id = 1)
+                          Buffers: shared hit=5
+                    ->  Index Scan using uq_lesson_in_unit on lessons l  (cost=0.28..4.11 rows=8 width=16) (actual time=0.002..0.003 rows=4 loops=2)
+                          Index Cond: (unit_id = u.unit_id)
+                          Buffers: shared hit=6
+              ->  Materialize  (cost=0.42..8.55 rows=6 width=4) (actual time=0.001..0.003 rows=31 loops=9)
+                    Buffers: shared hit=4
+                    ->  Index Only Scan using idx_attempts_completed_learner_lesson on lesson_attempts a  (cost=0.42..8.53 rows=6 width=4) (actual time=0.009..0.012 rows=39 loops=1)
+                          Index Cond: (learner_id = 1042)
+                          Heap Fetches: 0
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 1.103 ms
+Execution Time: 0.107 ms
+=== R06 run 5 ===
+Limit  (cost=9.83..10.52 rows=1 width=14) (actual time=0.077..0.078 rows=1 loops=1)
+  Buffers: shared hit=21
+  ->  Incremental Sort  (cost=9.83..119.93 rows=159 width=14) (actual time=0.077..0.077 rows=1 loops=1)
+        Sort Key: u.unit_no, l.lesson_no
+        Presorted Key: u.unit_no
+        Full-sort Groups: 1  Sort Method: top-N heapsort  Average Memory: 25kB  Peak Memory: 25kB
+        Buffers: shared hit=21
+        ->  Nested Loop Anti Join  (cost=0.84..116.89 rows=159 width=14) (actual time=0.038..0.061 rows=7 loops=1)
+              Join Filter: (a.lesson_id = l.lesson_id)
+              Rows Removed by Join Filter: 274
+              Buffers: shared hit=15
+              ->  Nested Loop  (cost=0.42..93.95 rows=160 width=14) (actual time=0.014..0.018 rows=9 loops=1)
+                    Buffers: shared hit=11
+                    ->  Index Scan using uq_unit_in_course on units u  (cost=0.14..10.24 rows=20 width=6) (actual time=0.009..0.009 rows=2 loops=1)
+                          Index Cond: (course_id = 1)
+                          Buffers: shared hit=5
+                    ->  Index Scan using uq_lesson_in_unit on lessons l  (cost=0.28..4.11 rows=8 width=16) (actual time=0.002..0.003 rows=4 loops=2)
+                          Index Cond: (unit_id = u.unit_id)
+                          Buffers: shared hit=6
+              ->  Materialize  (cost=0.42..8.55 rows=6 width=4) (actual time=0.002..0.003 rows=31 loops=9)
+                    Buffers: shared hit=4
+                    ->  Index Only Scan using idx_attempts_completed_learner_lesson on lesson_attempts a  (cost=0.42..8.53 rows=6 width=4) (actual time=0.010..0.013 rows=39 loops=1)
+                          Index Cond: (learner_id = 1042)
+                          Heap Fetches: 0
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 1.111 ms
+Execution Time: 0.109 ms

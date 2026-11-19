@@ -1,0 +1,85 @@
+=== R14 run 1 ===
+Sort  (cost=543.01..543.03 rows=8 width=79) (actual time=3.964..3.965 rows=8 loops=1)
+  Sort Key: tier
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=51
+  ->  HashAggregate  (cost=542.61..542.89 rows=8 width=79) (actual time=3.897..3.905 rows=8 loops=1)
+        Group Key: tier
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=48
+        ->  Index Only Scan using idx_league_week_tier_result on league_memberships  (cost=0.29..399.33 rows=9552 width=14) (actual time=0.086..1.793 rows=9552 loops=1)
+              Index Cond: ((week_start >= '2026-06-01'::date) AND (week_start <= '2026-06-22'::date))
+              Heap Fetches: 0
+              Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=159
+Planning Time: 0.782 ms
+Execution Time: 4.043 ms
+=== R14 run 2 ===
+Sort  (cost=543.01..543.03 rows=8 width=79) (actual time=2.823..2.824 rows=8 loops=1)
+  Sort Key: tier
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=51
+  ->  HashAggregate  (cost=542.61..542.89 rows=8 width=79) (actual time=2.781..2.788 rows=8 loops=1)
+        Group Key: tier
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=48
+        ->  Index Only Scan using idx_league_week_tier_result on league_memberships  (cost=0.29..399.33 rows=9552 width=14) (actual time=0.052..1.024 rows=9552 loops=1)
+              Index Cond: ((week_start >= '2026-06-01'::date) AND (week_start <= '2026-06-22'::date))
+              Heap Fetches: 0
+              Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=159
+Planning Time: 0.487 ms
+Execution Time: 2.869 ms
+=== R14 run 3 ===
+Sort  (cost=543.01..543.03 rows=8 width=79) (actual time=3.995..3.997 rows=8 loops=1)
+  Sort Key: tier
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=51
+  ->  HashAggregate  (cost=542.61..542.89 rows=8 width=79) (actual time=3.940..3.947 rows=8 loops=1)
+        Group Key: tier
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=48
+        ->  Index Only Scan using idx_league_week_tier_result on league_memberships  (cost=0.29..399.33 rows=9552 width=14) (actual time=0.084..1.682 rows=9552 loops=1)
+              Index Cond: ((week_start >= '2026-06-01'::date) AND (week_start <= '2026-06-22'::date))
+              Heap Fetches: 0
+              Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=159
+Planning Time: 0.723 ms
+Execution Time: 4.070 ms
+=== R14 run 4 ===
+Sort  (cost=543.01..543.03 rows=8 width=79) (actual time=4.451..4.451 rows=8 loops=1)
+  Sort Key: tier
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=51
+  ->  HashAggregate  (cost=542.61..542.89 rows=8 width=79) (actual time=4.391..4.398 rows=8 loops=1)
+        Group Key: tier
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=48
+        ->  Index Only Scan using idx_league_week_tier_result on league_memberships  (cost=0.29..399.33 rows=9552 width=14) (actual time=0.100..2.001 rows=9552 loops=1)
+              Index Cond: ((week_start >= '2026-06-01'::date) AND (week_start <= '2026-06-22'::date))
+              Heap Fetches: 0
+              Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=159
+Planning Time: 0.860 ms
+Execution Time: 4.533 ms
+=== R14 run 5 ===
+Sort  (cost=543.01..543.03 rows=8 width=79) (actual time=4.106..4.107 rows=8 loops=1)
+  Sort Key: tier
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=51
+  ->  HashAggregate  (cost=542.61..542.89 rows=8 width=79) (actual time=4.051..4.058 rows=8 loops=1)
+        Group Key: tier
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=48
+        ->  Index Only Scan using idx_league_week_tier_result on league_memberships  (cost=0.29..399.33 rows=9552 width=14) (actual time=0.075..1.803 rows=9552 loops=1)
+              Index Cond: ((week_start >= '2026-06-01'::date) AND (week_start <= '2026-06-22'::date))
+              Heap Fetches: 0
+              Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=159
+Planning Time: 0.694 ms
+Execution Time: 4.178 ms

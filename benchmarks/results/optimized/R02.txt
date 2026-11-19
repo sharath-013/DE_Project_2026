@@ -1,0 +1,85 @@
+=== R02 run 1 ===
+Sort  (cost=9.56..9.57 rows=1 width=41) (actual time=0.027..0.028 rows=1 loops=1)
+  Sort Key: e.total_xp DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  Nested Loop  (cost=0.29..9.55 rows=1 width=41) (actual time=0.013..0.013 rows=1 loops=1)
+        Join Filter: (e.course_id = c.course_id)
+        Buffers: shared hit=4
+        ->  Index Scan using enrollments_pkey on enrollments e  (cost=0.29..8.31 rows=1 width=15) (actual time=0.008..0.009 rows=1 loops=1)
+              Index Cond: (learner_id = 1042)
+              Buffers: shared hit=3
+        ->  Seq Scan on courses c  (cost=0.00..1.11 rows=11 width=30) (actual time=0.002..0.002 rows=1 loops=1)
+              Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=257
+Planning Time: 0.628 ms
+Execution Time: 0.065 ms
+=== R02 run 2 ===
+Sort  (cost=9.56..9.57 rows=1 width=41) (actual time=0.026..0.027 rows=1 loops=1)
+  Sort Key: e.total_xp DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  Nested Loop  (cost=0.29..9.55 rows=1 width=41) (actual time=0.012..0.013 rows=1 loops=1)
+        Join Filter: (e.course_id = c.course_id)
+        Buffers: shared hit=4
+        ->  Index Scan using enrollments_pkey on enrollments e  (cost=0.29..8.31 rows=1 width=15) (actual time=0.008..0.009 rows=1 loops=1)
+              Index Cond: (learner_id = 1042)
+              Buffers: shared hit=3
+        ->  Seq Scan on courses c  (cost=0.00..1.11 rows=11 width=30) (actual time=0.002..0.002 rows=1 loops=1)
+              Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=257
+Planning Time: 0.609 ms
+Execution Time: 0.063 ms
+=== R02 run 3 ===
+Sort  (cost=9.56..9.57 rows=1 width=41) (actual time=0.027..0.028 rows=1 loops=1)
+  Sort Key: e.total_xp DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  Nested Loop  (cost=0.29..9.55 rows=1 width=41) (actual time=0.013..0.013 rows=1 loops=1)
+        Join Filter: (e.course_id = c.course_id)
+        Buffers: shared hit=4
+        ->  Index Scan using enrollments_pkey on enrollments e  (cost=0.29..8.31 rows=1 width=15) (actual time=0.009..0.009 rows=1 loops=1)
+              Index Cond: (learner_id = 1042)
+              Buffers: shared hit=3
+        ->  Seq Scan on courses c  (cost=0.00..1.11 rows=11 width=30) (actual time=0.002..0.002 rows=1 loops=1)
+              Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=257
+Planning Time: 0.652 ms
+Execution Time: 0.065 ms
+=== R02 run 4 ===
+Sort  (cost=9.56..9.57 rows=1 width=41) (actual time=0.026..0.027 rows=1 loops=1)
+  Sort Key: e.total_xp DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  Nested Loop  (cost=0.29..9.55 rows=1 width=41) (actual time=0.012..0.012 rows=1 loops=1)
+        Join Filter: (e.course_id = c.course_id)
+        Buffers: shared hit=4
+        ->  Index Scan using enrollments_pkey on enrollments e  (cost=0.29..8.31 rows=1 width=15) (actual time=0.008..0.008 rows=1 loops=1)
+              Index Cond: (learner_id = 1042)
+              Buffers: shared hit=3
+        ->  Seq Scan on courses c  (cost=0.00..1.11 rows=11 width=30) (actual time=0.002..0.002 rows=1 loops=1)
+              Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=257
+Planning Time: 0.609 ms
+Execution Time: 0.063 ms
+=== R02 run 5 ===
+Sort  (cost=9.56..9.57 rows=1 width=41) (actual time=0.026..0.027 rows=1 loops=1)
+  Sort Key: e.total_xp DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  Nested Loop  (cost=0.29..9.55 rows=1 width=41) (actual time=0.012..0.013 rows=1 loops=1)
+        Join Filter: (e.course_id = c.course_id)
+        Buffers: shared hit=4
+        ->  Index Scan using enrollments_pkey on enrollments e  (cost=0.29..8.31 rows=1 width=15) (actual time=0.008..0.009 rows=1 loops=1)
+              Index Cond: (learner_id = 1042)
+              Buffers: shared hit=3
+        ->  Seq Scan on courses c  (cost=0.00..1.11 rows=11 width=30) (actual time=0.002..0.002 rows=1 loops=1)
+              Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=257
+Planning Time: 0.605 ms
+Execution Time: 0.063 ms
